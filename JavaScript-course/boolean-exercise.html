@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Boolean exercise</title>
+</head>
+
+<body>
+
+    <script>
+        let hour = 19;
+
+        let name = 'devam tanwani';
+        if (hour > 6 && hour <= 12) {
+            console.log(`good morning! ${name}`);
+        }
+        else if (hour >= 13 && hour <= 17) {
+            console.log(`good afternoon! ${name}`);
+        }
+        else {
+            console.log(`good night! ${name}`);
+        }
+
+        let age = 333;
+        const isHoliday = true;
+
+
+        if ((age <= 6 || age >= 65) && !isHoliday) {
+            console.log(`DISCOUNT`);
+        }
+        else {
+            console.log(`NO DISCOUNT`);
+        }
+
+        x = Math.random()
+        result = '';
+        if (x <= 0.5) {
+            result += 'heads';
+        }
+        else {
+            result += 'tails';
+        }
+        guess = 'heads';
+
+        console.log(`you - ${guess}`);
+        console.log(`it was - ${result}`);
+
+        result === guess ? console.log('YOU WON') : console.log('WRONG GUESS');
+
+    </script>
+</body>
+
+</html>

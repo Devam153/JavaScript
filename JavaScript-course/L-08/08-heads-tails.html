@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects</title>
+</head>
+
+<body>
+    <p>HEADS OR TAILS ?</p>
+    <button onclick="
+        playGame('heads');
+        ">heads</button>
+    <button onclick="
+        playGame('tails');
+    ">tails</button>
+
+    <p class="chose"></p>
+
+    <button onclick="
+        score.wins = 0;
+        score.losses = 0;
+        localStorage.setItem('score', JSON.stringify(score));
+        console.log('game reset');
+        console.log(`Wins: ${score.wins}, Losses: ${score.losses}`);
+    ">Reset Score</button>
+
+    <script>
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            losses: 0
+        };
+
+        function playGame(guess) {
+            x = Math.random()
+            result = '';
+            if (x <= 0.5) {
+                result += 'heads';
+            }
+            else {
+                result += 'tails';
+            }
+            console.log(`you chose - ${guess}`);
+            console.log(`it was - ${result}`);
+            //result === guess ? console.log('YOU WON') : console.log('WRONG GUESS');
+
+            if (result === guess) {
+                console.log('YOU WIN!');
+                score.wins++;
+            }
+            else {
+                console.log('YOU LOSE!');
+                score.losses++;
+            }
+            console.log(`Wins: ${score.wins}, Losses: ${score.losses}`);
+            localStorage.setItem('score', JSON.stringify(score));
+
+            document.querySelector('.chose').innerHTML = `you chose: ${guess}`;
+        }
+    </script>
+</body>
+
+</html>

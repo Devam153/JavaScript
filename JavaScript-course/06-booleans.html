@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booleans</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        if (0) {
+            console.log("truthy");
+        }
+        const cart = 5;
+
+        if (cart) {
+            console.log("cart has products");
+        }
+        console.log(!0); //true
+
+        console.log('test' / 5); // NaN
+        const variable1 = undefined;
+        console.log(variable1)
+
+        const res = 0 ? 'truthy' : 'falsy'; //ternary op
+        console.log(res);
+
+        false && console.log("hello");//guard
+
+        const message = 5 && 'hello';
+        console.log(message);
+
+        const currency = undefined || 'USD';
+        console.log(currency);//default op
+    </script>
+</body>
+
+</html>

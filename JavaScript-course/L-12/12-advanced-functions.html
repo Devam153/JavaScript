@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Advanced Functions</title>
+
+</head>
+
+<body>
+    <button onclick="" class="js-button">Click</button>
+    <script>
+        /*
+        const buttonelement = document.querySelector('.js-button');
+
+
+        const eventlistener = () => {
+            console.log('click');
+        };
+        buttonelement.addEventListener('click', eventlistener);
+
+        buttonelement.removeEventListener('click', eventlistener);
+
+        //does same as onclick 
+        // lets us add multiple events
+        buttonelement.addEventListener('click', () => {
+            console.log('click2');
+        });
+
+        
+        const function1 = function () {
+            console.log('hello2');//anonymous function
+        }
+        console.log(function1);
+        console.log(typeof function1);
+        // a function is just another type of value
+        function1(); // we can also run function inside this variable
+
+        const object1 = {
+            num: 2,
+            fun: function () { //function greeting() {}
+                console.log('hello3');
+            }
+        };
+        object1.fun(); //method - function saved inside object
+
+        function display(param) {
+            console.log(param);
+
+        }
+        display(2);
+
+        function run(param) {
+            param();
+        }
+        run(function () {
+            console.log('hello4');//callback func
+        });//passing a func into another func
+        
+        setTimeout(function () {
+            console.log('timeout');
+            console.log('timeo1ut');
+        }, 3000);
+
+        //asynchronous code
+        console.log('next line');//eg-alarm clock
+
+        setInterval(function () {
+            console.log('interval');
+        }, 3000);
+
+        console.log('next line 2');
+
+        
+
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function (value, index) {
+
+            if (value === 'wash dishes') {
+                return; //continue
+            }
+            console.log(value + ' babe');
+            console.log(index);
+        });
+
+        const regularfunction = function () {
+            console.log('hello');
+        };
+
+        const arrowfunction = () => {
+            console.log('hello');
+        };
+        arrowfunction();
+
+        const oneline = () => 2 + 3; //one line arrow function
+        console.log(oneline());
+
+        const object2 = {
+            method: () => {
+                console.log()
+            }
+        };
+        */
+
+        console.log([1, -3, 5].filter((values, index) => {
+            /*
+            if (values >= 0) {
+                return true;
+            } else return false;
+            */
+            return values >= 0;
+        }));
+
+        console.log([1, 1, 3].map(value => value * 2));
+    </script>
+</body>
+
+</html>

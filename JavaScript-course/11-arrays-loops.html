@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array to do list</title>
+
+</head>
+
+<body>
+    <p>ToDo list practice 1</p>
+    <input type="text" placeholder="ToDo name" class="js-input">
+    <button onclick="
+        addtolist();
+    ">Add</button>
+
+    <p>ToDo list practice 2</p>
+    <input type="text" placeholder="ToDo name" class="js-input1">
+    <button onclick="
+            addtolist2();
+        ">Add</button>
+    <div class="js-todo-list">
+    </div>
+
+    <script>
+        let arr = [];
+
+        function addtolist() {
+            let name = document.querySelector('.js-input');
+            let name1 = name.value;
+
+            arr.push(name1);
+
+            console.log(arr);
+
+            name.value = '';
+        }
+        function addtolist2() {
+            let name = document.querySelector('.js-input1');
+            let name1 = name.value;
+
+            arr.push(name1);
+
+            let todolisthtml = '';
+            for (let i = 0; i < arr.length; i++) {
+                const todo = arr[i];
+                const html = `
+                <p>
+                    ${todo}
+                    <button onclick = "
+                        arr.splice(${i}, 1);
+                        addtolist2();
+                    " >Delete</button>
+                </p>
+                `;
+                todolisthtml += html;
+            }
+            console.log(todolisthtml);
+            document.querySelector('.js-todo-list')
+                .innerHTML = todolisthtml;
+
+            name.value = '';
+        }
+    </script>
+</body>
+
+</html>
