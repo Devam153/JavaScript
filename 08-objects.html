@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Objects</title>
+</head>
+
+<body>
+    <script>
+        /*
+        const product = {
+            name: 'socks',
+            price: '1090'
+        };
+        console.log(typeof product);
+        console.log(product.name);
+        console.log(product.price);
+
+        product.name = 'cotton socks';
+        console.log(product.name);
+
+        product.newproperty = true;
+        console.log(product);
+        delete product.newproperty;
+        console.log(product);
+        */
+
+        const product2 = {
+            name: 'shirt',
+            'delivery-time': 'one-day',
+            rating: {
+                stars: 4.5,
+                count: 87
+            },
+            functions: [
+                function function1() {
+                    console.log('function1 inside object');
+                },
+                function function2() {
+                    console.log('function2');
+                }
+            ]
+        };
+
+        console.log(product2);
+        console.log(product2.name);
+        console.log(product2['name']);
+        console.log(product2['delivery-time']);
+
+        console.log(product2.rating.stars);
+        // To call a specific function
+        product2.functions[0](); // Calls function1
+        product2.functions[1](); // Calls function2
+
+        console.log(typeof console);
+        console.log(typeof console.log);
+
+        console.log(JSON.stringify(product2));
+        console.log(typeof JSON.stringify(product2));
+
+        const jsonstring = JSON.stringify(product2);
+        console.log(JSON.parse(jsonstring));
+        //Functions are typically not included in JSON data 
+        //as they are behavior-specific and not part of the data serialization process.
+        //JSON is meant to be language-agnostic, and functions are language-specific
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        //auto - boxing 
+        console.log(3.0.toString());
+
+        //objects are references 
+        const object1 = {
+            message: 'hello'
+        };
+
+        const object2 = object1;
+        object1.message = "good job!";
+        console.log(object1);
+        console.log(object2);
+
+        const object3 = {
+            message: 'Good job!',
+            price: 377
+        };
+
+        console.log(object1 === object3); // as they are references
+        console.log(object1 === object2);  // points to same object
+
+        //const message = object3.message;
+        const { message, price } = object3; //destructuring
+        console.log(message);
+        console.log(price);
+        console.log(object3.message);
+
+        const object4 = {
+            //message: message,
+            message, // samw as above shortcut -- shorthand property
+            //method: function function1() {
+            //console.log('method');
+
+            method() {
+                console.log('method'); //same as above
+            }
+        };
+        console.log(object4);
+        console.log(object4['message']);
+        object4.method();
+    </script>
+</body>
+
+</html>
